@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import base64
+import requests  # <-- yeh line kahi pe bhi top par daal do
 import copy
 import hashlib
 import io
