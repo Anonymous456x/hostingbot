@@ -669,11 +669,11 @@ _TZ_INDEX_DATA = (
 
 PLAN_LIMITS: Dict[str, Dict[str, Any]] = {
     "free":       {"name": "Free",       "max_bots": 2,   "ram": 128,  "auto_restart": False, "price": 0,    "days": 0},
-    "starter":    {"name": "Starter",    "max_bots": 4,   "ram": 256,  "auto_restart": True,  "price": 99,   "days": 30},
-    "basic":      {"name": "Basic",      "max_bots": 6,  "ram": 512,  "auto_restart": True,  "price": 199,  "days": 30},
-    "pro":        {"name": "Pro",        "max_bots": 8,  "ram": 2048, "auto_restart": True,  "price": 499,  "days": 30},
-    "enterprise": {"name": "Enterprise", "max_bots": 10,  "ram": 4096, "auto_restart": True,  "price": 999,  "days": 30},
-    "lifetime":   {"name": "Lifetime",   "max_bots": 15, "ram": 8192, "auto_restart": True,  "price": 1999, "days": 36500},
+    "starter":    {"name": "Starter",    "max_bots": 4,   "ram": 256,  "auto_restart": True,  "price": 50,   "days": 30},
+    "basic":      {"name": "Basic",      "max_bots": 6,  "ram": 512,  "auto_restart": True,  "price": 100,  "days": 30},
+    "pro":        {"name": "Pro",        "max_bots": 8,  "ram": 2048, "auto_restart": True,  "price": 150,  "days": 30},
+    "enterprise": {"name": "Enterprise", "max_bots": 10,  "ram": 4096, "auto_restart": True,  "price": 200,  "days": 30},
+    "lifetime":   {"name": "Lifetime",   "max_bots": 15, "ram": 8192, "auto_restart": True,  "price": 219, "days": 36500},
 }
 
 PAYMENT_METHODS: Dict[str, Dict[str, Any]] = {
@@ -705,8 +705,8 @@ MAX_UPLOAD_BYTES = 75 * 1024 * 1024  # 75 MB hard cap
 # we cache and reuse for all later sends.
 _PHOTO_SPECS: Dict[str, Tuple[str, str, str]] = {
     # key:        (headline,        accent-hex, sub-text)
-    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "https://files.catbox.moe/njkfa6.png", "Sɪᴍʀᴀɴ Hᴏꜱᴛɪɴɢ"),
-    "main":      ("Mᴀɪɴ Mᴇɴᴜ",       "https://files.catbox.moe/njkfa6.png", "Cʜᴏᴏꜱᴇ Aɴ Oᴘᴛɪᴏɴ"),
+    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "#0F172A", "Sɪᴍʀᴀɴ Hᴏꜱᴛɪɴɢ"),
+    "main":      ("Mᴀɪɴ Mᴇɴᴜ",       "#0F172A", "Cʜᴏᴏꜱᴇ Aɴ Oᴘᴛɪᴏɴ"),
     "tunnel":    ("Pᴜʙʟɪᴄ Uʀʟ",      "#0E7490", "Cʟᴏᴜᴅꜰʟᴀʀᴇ Tᴜɴɴᴇʟ"),
     "bots":      ("Yᴏᴜʀ Bᴏᴛꜱ",       "#0E7490", "Mᴀɴᴀɢᴇ & Dᴇᴘʟᴏʏ"),
     "upload":    ("Uᴘʟᴏᴀᴅ & Dᴇᴘʟᴏʏ", "#4338CA", "Sᴇɴᴅ Yᴏᴜʀ Fɪʟᴇꜱ"),
