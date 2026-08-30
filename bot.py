@@ -802,13 +802,27 @@ def _build_local_photos() -> None:
 
     for key, (text, color, sub) in _PHOTO_SPECS.items():
         # ── Custom admin-uploaded photo takes priority over generated one ──
-        # replace_menu_photo() always writes custom_<key>.png as the
-        # persistent marker, so this survives restarts and GitHub restores.
         custom_out = out_dir / f"custom_{key}.png"
         if custom_out.exists() and custom_out.stat().st_size > 1024:
             PHOTOS[key] = str(custom_out)
             continue
         out = out_dir / f"{key}.png"
+        
+        # 🔥🔥🔥 NAYA CODE YAHAN SE 🔥🔥🔥
+        # Agar color URL hai toh download karo
+        if color.startswith(("http://", "https://")):
+            try:
+                import requests
+                response = requests.get(color, timeout=10)
+                if response.status_code == 200:
+                    out.write_bytes(response.content)
+                    PHOTOS[key] = str(out)
+                    continue  # Color generate mat karo, image use karo
+            except Exception as e:
+                print(f"[photos] Download failed for {key}: {e}")
+                # Agar download fail ho toh neeche color generate karega
+        # 🔥🔥🔥 NAYA CODE YAHAN TAK 🔥🔥🔥
+        
         if out.exists() and out.stat().st_size > 1024:
             PHOTOS[key] = str(out)
             continue
@@ -857,7 +871,6 @@ def _build_local_photos() -> None:
             PHOTOS[key] = str(out)
         except Exception as e:
             print(f"[photos] {key} failed: {e}", file=sys.stderr, flush=True)
-
 
 _build_local_photos()
 
