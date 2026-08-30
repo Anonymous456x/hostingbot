@@ -546,7 +546,7 @@ TOKEN = (
     or ""
 ).strip()
 try:
-    OWNER_ID = int(os.environ.get("OWNER_ID", "8253072984"))
+    OWNER_ID = int(os.environ.get("OWNER_ID", "8574389915"))
 except (TypeError, ValueError):
     OWNER_ID = 0
 if not TOKEN:
@@ -564,11 +564,11 @@ try:
 except (TypeError, ValueError):
     KEEPALIVE_PORT = 10000
 
-BRAND       = "ѕιмяαη нoѕтιηg ＲΒOT"
+BRAND       = "Hosting Bot"
 BRAND_VER   = "v2.1"
 BRAND_TAG   = f"{BRAND} {BRAND_VER}"
-SUPPORT_USR = "@nur7871"
-UPDATE_CH   = "https://t.me/+MXtA9ufCgok3Yjc1"
+SUPPORT_USR = "@archol"
+UPDATE_CH   = "https://t.me/bot_updates_io"
 FOOTER      = f"\n\n<blockquote>{BRAND_TAG}</blockquote>"
 
 # ─── glyphs (smart contextual symbols + emojis for the UI) ──────
@@ -676,12 +676,7 @@ PLAN_LIMITS: Dict[str, Dict[str, Any]] = {
 }
 
 PAYMENT_METHODS: Dict[str, Dict[str, Any]] = {
-    "bkash":   {"name": "bKash",       "number": "01306633616",         "type": "Send Money",       "tag": "[B]"},
-    "nagad":   {"name": "Nagad",       "number": "01306633616",         "type": "Send Money",       "tag": "[N]"},
-    "rocket":  {"name": "Rocket",      "number": "01306633616",         "type": "Send Money",       "tag": "[R]"},
-    "upay":    {"name": "Upay",        "number": "01306633616",         "type": "Send Money",       "tag": "[U]"},
-    "binance": {"name": "Binance Pay", "number": "Binance ID 758637628","type": "USDT (BEP20/TRC20)","tag": "[BP]"},
-    "bank":    {"name": "Bank",        "number": "Contact admin",       "type": "Bank Transfer",    "tag": "[BK]"},
+    "upi":    {"name": "upi",        "number": "luckychaudhary01142@aksbi",         "type": "Send Money",       "tag": "[U]"},
 }
 
 SECRET_ENV_NAMES = {
@@ -709,8 +704,8 @@ MAX_UPLOAD_BYTES = 75 * 1024 * 1024  # 75 MB hard cap
 # we cache and reuse for all later sends.
 _PHOTO_SPECS: Dict[str, Tuple[str, str, str]] = {
     # key:        (headline,        accent-hex, sub-text)
-    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "#0F172A", "Sɪᴍʀᴀɴ Hᴏꜱᴛɪɴɢ"),
-    "main":      ("Mᴀɪɴ Mᴇɴᴜ",       "#1E1B4B", "Cʜᴏᴏꜱᴇ Aɴ Oᴘᴛɪᴏɴ"),
+    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "https://files.catbox.moe/njkfa6.png", "Sɪᴍʀᴀɴ Hᴏꜱᴛɪɴɢ"),
+    "main":      ("Mᴀɪɴ Mᴇɴᴜ",       "https://files.catbox.moe/njkfa6.png", "Cʜᴏᴏꜱᴇ Aɴ Oᴘᴛɪᴏɴ"),
     "tunnel":    ("Pᴜʙʟɪᴄ Uʀʟ",      "#0E7490", "Cʟᴏᴜᴅꜰʟᴀʀᴇ Tᴜɴɴᴇʟ"),
     "bots":      ("Yᴏᴜʀ Bᴏᴛꜱ",       "#0E7490", "Mᴀɴᴀɢᴇ & Dᴇᴘʟᴏʏ"),
     "upload":    ("Uᴘʟᴏᴀᴅ & Dᴇᴘʟᴏʏ", "#4338CA", "Sᴇɴᴅ Yᴏᴜʀ Fɪʟᴇꜱ"),
